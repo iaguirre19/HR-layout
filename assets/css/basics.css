@@ -13,8 +13,8 @@
     --title-light: #000002;
     --text-footer-light: #9da4ae;
 
-    --font-size-title: 3.6rem;
-    --font-size-subtitle: 2.4rem;
+    --font-size-title: 2.8rem;
+    --font-size-subtitle: 1.6rem;
     --font-size-body: 1.6rem;
     --font-size-footer: 1.2rem;
     --font-size-button: 1.4rem;
@@ -23,12 +23,15 @@
 
     /* Spacing */
     --spacing-logo-title: 2rem;
-    --spacing-sections: 1.8rem;
+    --spacing-sections: 3.4rem;
     --spacing-label-input: 1.5rem;
     --spacing-group-elements: 1rem;
     --spacing-inline-elements: 1.5rem;
 }
 
+i{
+    color: #f5f5f5;
+}
 
 html {
     box-sizing: border-box;

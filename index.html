@@ -11,16 +11,117 @@
 
     <link rel="stylesheet" href="./assets/css/basics.css">
     <link rel="stylesheet" href="./assets/css/right-panel/rigth-panel.css">
+    <link rel="stylesheet" href="./assets/css/left-panel/left-panel.css">
 
 </head>
 <body>
     <main class="main-content">
         <section class="content-section">
             <div class="left-panel">
-                <div class="panel-item"></div>
-                <div class="panel-item"></div>
-                <div class="panel-item"></div>
-                <div class="panel-item"></div>
+                <div class="panel-item logo-form">
+                    <div class="logo-left-panel">
+                        <img src="https://agibusiness.com/wp-content/uploads/2023/04/agi_logo_azul.png" alt="">
+                    </div>
+                </div>
+                <div class="panel-item form-header-title">
+                    <div class="title-form">
+                        <div class="title-form-up">
+                            <h2 class="title-form-h2">Data Personal</h2>
+                            <div class="steps-container">
+                                <p class="step-counter">Step 1 of 2</p>
+                            </div>
+                        </div>
+                        <p class="title-form-description">Please complete the following form to provide your personal information. The information you provide will be used solely for the purpose of evaluating your candidacy.</p>
+                    </div>
+                </div>
+                <!-- <div class="panel-item form-left">
+                    <div class="form-container">
+                        <form class="personal-info-form" action="procesar_formulario.php" method="POST">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" name="first_name" required><br>
+
+                            <label for="last-name">Last Name (Paternal):</label>
+                            <input type="text" id="last-name" name="last_name" required><br>
+
+                            <label for="middle-name">Middle Name (Maternal):</label>
+                            <input type="text" id="middle-name" name="middle_name" required><br>
+
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select><br>
+
+                            <label for="street">Street Address:</label>
+                            <input type="text" id="street" name="street" required><br>
+
+                            <label for="colony">Colony:</label>
+                            <input type="text" id="colony" name="colony" required><br>
+
+                            <label for="postal-code">Postal Code:</label>
+                            <input type="text" id="postal-code" name="postal_code" required><br>
+
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div> -->
+                <div class="panel-item form-left">
+                  <div class="form-container">
+                    <form class="personal-info-form" action="procesar_formulario.php" method="POST">
+                      <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first_name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="last-name">Last Name (Paternal):</label>
+                        <input type="text" id="last-name" name="last_name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name">Middle Name (Maternal):</label>
+                        <input type="text" id="middle-name" name="middle_name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="street">Street Address:</label>
+                        <input type="text" id="street" name="street" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="colony">Colony:</label>
+                        <input type="text" id="colony" name="colony" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="postal-code">Postal Code:</label>
+                        <input type="text" id="postal-code" name="postal_code" required>
+                      </div>
+                      <button class="submit-btn" type="submit">Submit</button>
+                    </form>
+                  </div>
+                </div>
+                
+                
+                
+                
+                <div class="panel-item footer-left">
+                    <div class="footer-container">
+                        <div class="copy-right">
+                          <span> All rights reserved &copy; 2023 AGI Business Group </span>
+                        </div>
+                        <div class="email">
+                            <a href="mailto:correo@example.com">
+                                <i class='bx bx-envelope-open'></i>
+                                <span>correo@example.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="right-panel">
                 <div class="panel-item panel-item-icon">
@@ -30,15 +131,40 @@
                 </div>
                 <div class="panel-item panel-item-title">
                     <div class="title-container">
-                        <h2 class="panel-item-title">Agi Business Form</h2>
-                        <p class="panel-item-title">Welcome to Agi Business Form, you're required to complete each of the sections provided below. It's vital that you ensure the information you enter is both complete and accurate. Should you have any questions, please don't hesitate to reach out to our HR team for assistance.</p>
+                        <h2 class="panel-item-title-h2">Agi Business Form</h2>
+                        <p class="panel-item-subtitle">Welcome to Agi Business Form, you're required to complete each of the sections provided below. It's vital that you ensure the information you enter is both complete and accurate. Should you have any questions, please don't hesitate to reach out to our HR team for assistance.</p>
                     </div>
                 </div>
-                <div class="panel-item panel-item-toogle-cards">
-
+                <div class="panel-item panel-item-toggle-cards">
+                  <div class="button-container">
+                    <div class="button it-bg-p">
+                      <i class='bx bx-check-circle'></i>
+                      <span>Data Personal</span>
+                    </div>
+                    <div class="button it-bg-p">
+                      <i class='bx bx-check-circle'></i>
+                      <span>Additional Data</span>
+                    </div>
+                    <div class="button it-bg-p">
+                      <i class='bx bx-check-circle'></i>
+                      <span>Contact Information</span>
+                    </div>
+                    <div class="button it-bg-p">
+                      <i class='bx bx-check-circle'></i>
+                      <span>Health Information</span>
+                    </div>
+                    <div class="button it-bg-p">
+                      <i class='bx bx-check-circle'></i>
+                      <span>Confirmation Required</span>
+                    </div>
+                    <div class="button it-bg-p">
+                      <i class='bx bx-check-circle'></i>
+                      <span>Position Data</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="panel-item panel-item-footer">
-
+                    
                 </div>
             </div>
         </section>
