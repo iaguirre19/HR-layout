@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 10% 1fr;
     width: 100%;
-    height: 5rem;
+    height: 4rem;
 }
 .logo-left-panel img{
     width: 100%;
@@ -44,31 +44,6 @@
     font-size: var(--font-size-subtitle);
     opacity: .9;
 }
-
-
-
-/* Form */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .footer-left {
     display: flex;
     align-items: center;
@@ -89,22 +64,23 @@
   }
   .copy-right span{
     font-size: 1.2rem;
+    color: var(--text-footer-light);
   }
 
   .email a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--text-footer-light);
+    color: #bcbcbc;
   }
 
   .email a i {
     font-size: 1.4rem;
     margin-right: 5px;
-    color: var(--text-footer-light);
+    color: #bcbcbc;
   }
 
   .email a span {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 500;
   }

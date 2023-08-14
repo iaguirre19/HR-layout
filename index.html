@@ -6,12 +6,19 @@
     <title>AGI Form</title>
 
     <!-- Fonts and Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
     <link rel="stylesheet" href="./assets/css/basics.css">
     <link rel="stylesheet" href="./assets/css/right-panel/rigth-panel.css">
     <link rel="stylesheet" href="./assets/css/left-panel/left-panel.css">
+    <link rel="stylesheet" href="./assets/css/form/form-styles.css">
 
 </head>
 <body>
@@ -34,81 +41,200 @@
                         <p class="title-form-description">Please complete the following form to provide your personal information. The information you provide will be used solely for the purpose of evaluating your candidacy.</p>
                     </div>
                 </div>
-                <!-- <div class="panel-item form-left">
-                    <div class="form-container">
-                        <form class="personal-info-form" action="procesar_formulario.php" method="POST">
-                            <label for="first-name">First Name:</label>
-                            <input type="text" id="first-name" name="first_name" required><br>
-
-                            <label for="last-name">Last Name (Paternal):</label>
-                            <input type="text" id="last-name" name="last_name" required><br>
-
-                            <label for="middle-name">Middle Name (Maternal):</label>
-                            <input type="text" id="middle-name" name="middle_name" required><br>
-
-                            <label for="gender">Gender:</label>
-                            <select id="gender" name="gender" required>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select><br>
-
-                            <label for="street">Street Address:</label>
-                            <input type="text" id="street" name="street" required><br>
-
-                            <label for="colony">Colony:</label>
-                            <input type="text" id="colony" name="colony" required><br>
-
-                            <label for="postal-code">Postal Code:</label>
-                            <input type="text" id="postal-code" name="postal_code" required><br>
-
-                            <button type="submit">Submit</button>
-                        </form>
-                    </div>
-                </div> -->
                 <div class="panel-item form-left">
                   <div class="form-container">
-                    <form class="personal-info-form" action="procesar_formulario.php" method="POST">
-                      <div class="form-group">
-                        <label for="first-name">First Name:</label>
-                        <input type="text" id="first-name" name="first_name" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="last-name">Last Name (Paternal):</label>
-                        <input type="text" id="last-name" name="last_name" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="middle-name">Middle Name (Maternal):</label>
-                        <input type="text" id="middle-name" name="middle_name" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="gender">Gender:</label>
-                        <select id="gender" name="gender" required>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="street">Street Address:</label>
-                        <input type="text" id="street" name="street" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="colony">Colony:</label>
-                        <input type="text" id="colony" name="colony" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="postal-code">Postal Code:</label>
-                        <input type="text" id="postal-code" name="postal_code" required>
-                      </div>
-                      <button class="submit-btn" type="submit">Submit</button>
-                    </form>
+                      <form class="personal-info-form" id="form1" action="" method="POST">
+                          <!-- <div class="form-group form-name">
+                              <label for="first-name">First Name:</label>
+                              <div class="input-container">
+                                <input type="text" id="first-name" name="first_name" required>
+                                <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                          <div class="form-group form-last-name">
+                              <label for="last-name">Last Name (Paternal):</label>
+                              <div class="input-container">
+                                <input type="text" id="last-name" name="last_name" required>
+                                <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                          <div class="form-group form-middle-name">
+                              <label for="middle-name">Middle Name (Maternal):</label>
+                              <div class="input-container">
+                                <input type="text" id="middle-name" name="middle_name" required>
+                                <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                          <div class="form-group form-gender">
+                              <label for="gender">Gender:</label>
+                              <div class="input-container">
+                                  <select id="gender" name="gender" required>
+                                      <option value="male">Male</option>
+                                      <option value="female">Female</option>
+                                      <option value="other">Other</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="form-group form-street">
+                              <label for="street">Street Address:</label>
+                              <div class="input-container">
+                                <input type="text" id="street" name="street" required>
+                                <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                          <div class="form-group form-colony">
+                              <label for="colony">Colony:</label>
+                              <div class="input-container">
+                                <input type="text" id="colony" name="colony" required>
+                                <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                          <div class="form-group form-postal">
+                              <label for="postal-code">Postal Code:</label>
+                              <div class="input-container">
+                                <input type="text" id="postal-code" name="postal_code" required>
+                                <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div> -->
+
+
+
+                          <div class="form-group form-name">
+    <label for="first-name">First Name:</label>
+    <div class="input-container">
+        <input type="text" id="first-name" name="first_name" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+<div class="form-group form-last-name">
+    <label for="last-name">Last Name (Paternal):</label>
+    <div class="input-container">
+        <input type="text" id="last-name" name="last_name" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+<div class="form-group form-middle-name">
+    <label for="middle-name">Middle Name (Maternal):</label>
+    <div class="input-container">
+        <input type="text" id="middle-name" name="middle_name" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+<div class="form-group form-gender">
+    <label for="gender">Gender:</label>
+    <div class="input-container">
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+</div>
+<div class="form-group form-birthplace">
+    <label for="birthplace">Place of Birth:</label>
+    <div class="input-container">
+        <input type="text" id="birthplace" name="birthplace" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+<div class="form-group form-nationality">
+    <label for="nationality">Nationality:</label>
+    <div class="input-container">
+        <input type="text" id="nationality" name="nationality" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+<div class="form-group form-birthdate">
+    <label for="birthdate">Date of Birth:</label>
+    <div class="input-container">
+        <input type="date" id="birthdate" name="birthdate" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+<div class="form-group form-age">
+    <label for="age">Age:</label>
+    <div class="input-container">
+        <input type="number" id="age" name="age" required>
+        <i class='bx bx-error-circle'></i>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                          <!-- <div class="form-group form-living-with">
+                              <label for="living-with">Living With:</label>
+                              <div class="input-container">
+                                  <input type="text" id="living-with" name="living_with" required>
+                                  <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                        
+                          <div class="form-group form-ownership">
+                              <label for="ownership">Housing Ownership:</label>
+                              <div class="input-container">
+                                  <select id="ownership" name="housing_ownership" required>
+                                      <option value="own">Own</option>
+                                      <option value="rent">Rent</option>
+                                  </select>
+                              </div>
+                          </div>
+                        
+                          <div class="form-group form-marital-status">
+                              <label for="marital-status">Marital Status:</label>
+                              <div class="input-container">
+                                  <select id="marital-status" name="marital_status" required>
+                                      <option value="single">Single</option>
+                                      <option value="married">Married</option>
+                                      <option value="divorced">Divorced</option>
+                                      <option value="widowed">Widowed</option>
+                                  </select>
+                              </div>
+                          </div>
+                        
+                          <div class="form-group form-children">
+                              <label for="children">Children:</label>
+                              <div class="input-container">
+                                  <input type="number" id="children" name="number_of_children" min="0" required>
+                                  <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                        
+                          <div class="form-group form-city">
+                              <label for="city">City or Delegation:</label>
+                              <div class="input-container">
+                                  <input type="text" id="city" name="city" required>
+                                  <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div>
+                        
+                          <div class="form-group form-state">
+                              <label for="state">State:</label>
+                              <div class="input-container">
+                                  <input type="text" id="state" name="state" required>
+                                  <i class='bx bx-error-circle'></i>
+                              </div>
+                          </div> -->
+                        </form>
+                        <div class="form-btns">
+                            <a class="next-btn"  onclick="nextForm(2)">
+                              <span>Next</span>
+                              <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                        </div>
+                      <form class="personal-info-form" id="form2" action="" method="POST">
+                          <!-- ... Tu contenido de formulario ... -->
+                          <button class="prev-btn" type="button" onclick="prevForm(1)">Prev</button>
+                          <button class="next-btn" type="button" onclick="nextForm(3)">Next</button>
+                      </form>
                   </div>
-                </div>
-                
-                
-                
-                
+                </div>               
                 <div class="panel-item footer-left">
                     <div class="footer-container">
                         <div class="copy-right">

@@ -74,16 +74,18 @@
 }
 
 .button:hover {
-  background-color: #f0f0f0;
+  background-color: var(--toggle-bg-hover);
 }
 
 .button i {
   margin-right: 10px;
   font-size: 22px;
+  color: #d7d7d7;
 }
 
 .button span {
   font-size: 18px;
+  color: #d7d7d7;
 }
 
 
