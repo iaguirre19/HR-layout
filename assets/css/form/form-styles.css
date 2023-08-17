@@ -1,25 +1,18 @@
-.form-container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-#form2,#form3{
-    display: none;
-}
-.bx-error-circle,
-.bx-chevron-right{
-    font-size: 2rem;
-}
 
-.personal-info-form{
-    width: 100%;
-    height: 100%;
+.data-personal-one{
+    /* display: none; */
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, 1fr) max-content;
     align-items: center;
     gap: 2rem;
+    /* padding: 0 1rem; */
+}
+.data-personal-two{
+    display: none;
+}
+.data-personal-three{
+    display: none;
 }
 .form-group{
     height: 100%;
@@ -38,7 +31,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: .1rem solid var(--border-input);
+    border: .2rem solid var(--border-input);
     border-radius: .4rem;
     padding:.2rem 2.8rem .2rem .8rem;
     transition: all 0.3s ease;
@@ -67,7 +60,7 @@
     font-weight: 600;
 }
 .form-name{
-    grid-column: span 2;
+    grid-column: span 4;
 }
 .form-last-name{
     grid-column: span 2;
@@ -79,22 +72,97 @@
     grid-column:span 2;
 }
 
+
 .form-gender{
+    grid-row: 4 / 5;
+}
+.form-birthplace{
     grid-column: span 2;
 }
-.form-btns{
-    grid-row: 4/5;
-    grid-column: 4/5;
-    align-self: flex-end;
-    justify-self: end;
+.form-nationality{
+    grid-column: span 2;
+}
+.form-birthdate .input-container input,
+.form-age .input-container input{
+    padding: 1rem;
 }
 
 /* btn next form */
 
+.form-btns-container{
+    width: 100%;
+    height: max-content;
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+}
+.pager-container{
+    grid-column: 2/3;
+    justify-self: flex-end;
+    display: flex;
+    column-gap: .8rem;
+    position: relative;
+}
+.save-btn-container{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
 
-.next-btn {
+.arrow {
+    font-weight: 600;
+    font-size: 1.8rem;
+    vertical-align: middle;
+}
+#saveButton{
+    grid-column: 1/2;
+}
+.pager-container::before{
+    content: "";
+    background-color: var(--border-input);
+    width: 2px;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-btns {
+    /* right: 0; */
+    /* width: 10rem; */
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .4rem;
+    padding: 0 1rem;
+    border-radius: .4rem;
+    font-weight: bolder;
+    transition: background-color 0.2s;
+}
+.pager,
+.pager i{
+    color: #737373;
+}
+.pager:hover, 
+.pager:hover i{
+    transition: all .3s ease-in-out;
+    color: #32a0ff;
+}
+
+.pager:hover .bx-left-arrow-alt{
+    transform: translateX(-.4rem)
+}
+.pager:hover .bx-right-arrow-alt{
+    transform: translateX(.4rem)
+}
+.save{
+    border: solid .1rem black;
+    color: white;
+    background-color: black;
     right: 0;
-    width: 12rem;
+    width: 10rem;
     font-size: 1.4rem;
     cursor: pointer;
     display: flex;
@@ -102,33 +170,12 @@
     justify-content: center;
     column-gap: .4rem;
     padding: .6rem 2rem;
-    border: solid .1rem #1786e8;
-    border-radius: .6rem;
+    border-radius: .4rem;
     font-weight: bolder;
-    transition: background-color 0.2s;
-    color: #085191;
-
-}
-.next-btn i{
-    color: #085191;
-    transition: all .3s ease-in-out;
-}
-/* .next-btn span,
-.next-btn i{
-    color: #085191;
-} */
-.next-btn:hover{
-    background-color: var(--toggle-bg-hover);
-    color: white;
-}
-.next-btn:hover i{
-    color: white;
-    transform: translateX(.5rem)
 }
 
-/* Estilos para el icono de flecha derecha */
-.bx.bx-right-arrow-alt {
-    font-weight: 600;
-    font-size: 1.8rem;
-    vertical-align: middle;
-}
+  .pager,
+  .hidden,
+  .save{
+    display: none;
+  }
