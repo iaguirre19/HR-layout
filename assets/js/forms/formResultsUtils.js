@@ -1,57 +1,15 @@
-// import { countFormGroups } from "./stepFormCounter.js";
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const buttons = document.querySelectorAll(".button[data-form]");
-//   const titleH2 = document.querySelector(".title-form-h2");
-//   const forms = document.querySelectorAll(".hidden-form");
-
-//   buttons.forEach((button) => {
-//     button.addEventListener("click", function () {
-//       const formId = this.getAttribute("data-form");
-//       const formTitle = button.querySelector("span").textContent;
-
-//       const formCounterTitle =  ("form-" + formId)
-      
-//       console.log(formCounterTitle)
-//       const countGroup = countFormGroups(formCounterTitle);
-      
-//       console.log(countGroup)
-      
-//       // Ocultar todos los formularios antes de mostrar el nuevo
-//       hideAllForms();
-
-//       // Mostrar el nuevo formulario y actualizar el título
-//       showForm(formId, formTitle);
-      
-//     });
-//   });
-
-
-
-
-//   function showForm(formId, formTitle) {
-//     const formToShow = document.getElementById("form-" + formId);
-//     formToShow.classList.remove("hidden-form");
-//     titleH2.textContent = formTitle;
-//   }
-
-//    function hideAllForms() {
-//      forms.forEach((form) => {
-//        form.classList.add("hidden-form");
-//      });
-//    }
-// });
-
-
-
-
+// import buttonsFunctions from './btnsFunctions.js'
 import { printSectionInfo } from "./sectionInfoPrint.js";
+import { validateParts } from './stepCounter.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const stepPrintCounter = document.querySelector(".step-counter-data");
   const toggleBtns = document.querySelectorAll(".button[data-form]");
-  const formSections = document.querySelectorAll('.sections-toggle-form');
+  const formSections = document.querySelectorAll(".sections-toggle-form");
+  const prevButton = document.getElementById("prevButton");
+  const nextButton = document.getElementById("nextButton");
+  const saveButton = document.getElementById("saveButton");
   const dataArray = [
     {
       "data-personal": {
@@ -101,25 +59,74 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", toogleEvent);
   });
 
-  
+  const hiddenForms = (section) => {
+    section.classList.remove("active-selected");
+  };
+
+  function showNextPart(section) {
+    const activePart = section.querySelector(".step.active-part");
+    if (activePart) {
+      activePart.classList.add("hidden");
+      activePart.classList.remove("active-part");
+      const nextPart = activePart.nextElementSibling;
+      if (nextPart) {
+        nextPart.classList.add("active-part");
+        nextPart.classList.remove("hidden");
+      }
+    }
+  }
+
+  const btnShow = (part, section) => {
+    if (part === 1) {
+      const button = nextButton;
+      button.style.display = "block";
+      nextButton.addEventListener("click",() => {
+        showNextPart(section);
+        console.log("Click")
+      })
+    
+    }
+  };
 
   function toogleEvent() {
     const toggleId = this.getAttribute("data-form");
 
+    // Validates if the button matches the form id and displays the appropriate title and form.
     const showForm = (toggleId) => {
       formSections.forEach((section) => {
         let formId = section.id;
-        section.classList.remove("active");
+        hiddenForms(section);
         if (formId === toggleId) {
-          section.classList.add("active"); // Corrección aquí
+          section.classList.add("active-selected");
+
+          const firstPartToShow = section.querySelector(".step:first-child");
+          console.log(firstPartToShow);
+
+          if (firstPartToShow) {
+            firstPartToShow.classList.add("active-part");
+            firstPartToShow.classList.remove("hidden");
+          }
+
+          const validateNumber = validateParts(section, stepPrintCounter);
+          btnShow(validateNumber, section);
+          // const activeParts = section.querySelectorAll(".step.active-part");
+          // const currentStep =
+          //   Array.from(activeParts).indexOf(
+          //     section.querySelector(".step.active-part")
+          //   ) + 1;
+          // // console.log(currentStep);
+          // const totalSteps = activeParts.length;
+          // // console.log(totalSteps);
+          // buttonsFunctions.updateButtonState(currentStep, totalSteps);
+
+          // const nextButton = document.getElementById("nextButton");
+          // nextButton.addEventListener("click", () => {
+          //   buttonsFunctions.showNextPart(section);
+          //   buttonsFunctions.updateButtonState(currentStep, totalSteps);
+          // });
         }
       });
     };
-
-
-
-
-
 
     dataArray.forEach((data) => {
       if (toggleId === Object.keys(data)[0]) {
@@ -129,16 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
         printSectionInfo(title, description, toggleId);
         showForm(toggleId);
       }
-
-      // formSections.forEach((section) => {
-      //   if(toggleId === section.id){
-      //     console.log(section)
-      //   }
-      // })
-
-
-
-      
     });
   }
 });

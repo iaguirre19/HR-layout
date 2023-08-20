@@ -1,5 +1,5 @@
 
-.data-personal-one{
+.grid-form{
     /* display: none; */
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -8,12 +8,7 @@
     gap: 2rem;
     /* padding: 0 1rem; */
 }
-.data-personal-two{
-    display: none;
-}
-.data-personal-three{
-    display: none;
-}
+
 .form-group{
     height: 100%;
     display: flex;
@@ -116,7 +111,7 @@
 #saveButton{
     grid-column: 1/2;
 }
-.pager-container::before{
+/* .pager-container::before{
     content: "";
     background-color: var(--border-input);
     width: 2px;
@@ -125,7 +120,7 @@
     left: 50%;
     top: 50%;
     transform: translateY(-50%);
-}
+} */
 
 .form-btns {
     /* right: 0; */
@@ -174,8 +169,12 @@
     font-weight: bolder;
 }
 
-  .pager,
-  .hidden,
-  .save{
+  #prevButton,
+  #nextButton,
+  #saveButton{
+    display: none;
+  }
+
+  .hidden{
     display: none;
   }

@@ -36,7 +36,7 @@
                             <div class="title-form-up">
                                 <h2 class="title-form-h2"></h2>
                                 <div class="steps-container">
-                                    <p class="step-counter"></p>
+                                    <p class="step-counter-data"></p>
                                 </div>
                             </div>
                             <p class="title-form-description"></p>
@@ -45,7 +45,7 @@
                             <!-- Personal data section -->
                             <div class="personal-data sections-toggle-form"  id="data-personal" >
                                 <!-- Group 1 -->
-                                <div class="data-personal-one step" id="first">                            
+                                <div class="data-personal-one step hidden grid-form">                            
                                     <div class="form-group form-name">
                                         <label for="first-name">Nombre:</label>
                                         <div class="input-container">
@@ -107,7 +107,7 @@
                                     </div>
                                 </div>
                                 <!-- Group 2 -->
-                                <div class="data-personal-two step hidden" id="second">                            
+                                <div class="data-personal-two step hidden grid-form" >                            
                                     <div class="form-group form-direccion">
                                         <label for="direccion">Dirección:</label>
                                         <div class="input-container">
@@ -179,7 +179,7 @@
                                     </div>    
                                 </div>
                                 <!-- Group 3 -->
-                                <div class="data-personal-three step hidden" id="therd">                            
+                                <div class="data-personal-three step hidden grid-form">                            
                                     <div class="form-group form-nivel-educacion">
                                         <label for="nivel-educacion">Nivel de Educación:</label>
                                         <div class="input-container">
@@ -225,7 +225,7 @@
                             </div>
                             <!-- Aditional section -->
                             <div class="additional-data sections-toggle-form" id="additional-data">
-                                <div class="additional-data step">
+                                <div class="additional-data step grid-form">
                                     <div class="form-group form-name">
                                         <label for="first-name">Nombre:</label>
                                         <div class="input-container">
@@ -261,7 +261,7 @@
                             </div>
                             <!-- contact section -->
                             <div class="contact-info sections-toggle-form" id="contact-information">
-                                <div class="contact-info-container step" id="contact-info-1">
+                                <div class="contact-info-container step grid-form hidden" id="contact-info-1">
                                     <div class="form-group company-info">
                                         <label for="company-name">Nombre de la Empresa:</label>
                                         <div class="input-container">
@@ -295,7 +295,7 @@
                                     </div>
                                 </div>
 
-                                <div class="contact-info-container step hidden" id="contact-info-2">
+                                <div class="contact-info-container step hidden grid-form" id="contact-info-2">
                                     <div class="form-group company-info">
                                         <label for="company-name-2">Nombre de la Empresa:</label>
                                         <div class="input-container">
@@ -329,7 +329,7 @@
                                     </div>
                                 </div>
 
-                                <div class="contact-info-reference-personnel step hidden">
+                                <div class="contact-info-reference-personnel step hidden grid-form">
                                     <div class="form-group first-name">
                                         <label for="first-name">Nombre:</label>
                                         <div class="input-container">
@@ -354,7 +354,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="contact-info-other-details step hidden">
+                                <div class="contact-info-other-details step hidden grid-form">
                                     <div class="form-group how-heard">
                                         <label for="how-heard">¿Cómo se enteró de nosotros?</label>
                                         <div class="input-container">
@@ -382,7 +382,7 @@
                             </div>
                             <!-- Health section -->
                             <div class="health-info sections-toggle-form" id="health-information">
-                                <div class="health-info-details step">
+                                <div class="health-info-details step ">
                                     <div class="form-group blood-type">
                                         <label for="blood-type">Tipo de Sangre:</label>
                                         <div class="input-container">
@@ -456,15 +456,170 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="health-assessment step hidden">
+                                    <div class="form-group health-status">
+                                        <label for="health-status">¿Cómo consideras tu salud?</label>
+                                        <div class="input-container">
+                                            <select id="health-status" name="estado-salud" required>
+                                                <option value="muy-buena">Muy buena</option>
+                                                <option value="buena">Buena</option>
+                                                <option value="regular">Regular</option>
+                                                <option value="no-tan-buena">No tan buena</option>
+                                            </select>
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group chronic-illness">
+                                        <label for="chronic-illness">¿Has padecido alguna enfermedad crónica?</label>
+                                        <div class="input-container">
+                                            <input type="text" id="chronic-illness" name="enfermedad-cronica">
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group covid-recent">
+                                        <label for="covid-recent">¿Has padecido COVID-19 en los últimos 6 meses?</label>
+                                        <div class="input-container">
+                                            <input type="radio" id="covid-yes" name="covid-reciente" value="si">
+                                            <label for="covid-yes">Sí</label>
+                                            <input type="radio" id="covid-no" name="covid-reciente" value="no">
+                                            <label for="covid-no">No</label>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group covid-vaccine">
+                                        <label for="covid-vaccine">¿Estás vacunado contra el COVID-19?</label>
+                                        <div class="input-container">
+                                            <input type="radio" id="vaccine-yes" name="vacuna-covid" value="si">
+                                            <label for="vaccine-yes">Sí</label>
+                                            <input type="radio" id="vaccine-no" name="vacuna-covid" value="no">
+                                            <label for="vaccine-no">No</label>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group current-medication">
+                                        <label for="current-medication">¿Estás tomando algún medicamento actualmente?</label>
+                                        <div class="input-container">
+                                            <input type="text" id="current-medication" name="medicamento-actual">
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group medical-appointment">
+                                        <label for="medical-appointment">¿Tienes alguna cita médica programada?</label>
+                                        <div class="input-container">
+                                            <input type="text" id="medical-appointment" name="cita-medica">
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
                             <!-- Confirmation section -->
                             <div class="confirmation-required sections-toggle-form" id="confirmation-required">
-                                <h2>Hola mundo</h2>
-                            </div>
-                            <!-- Position section -->
-                            <div class="position-info sections-toggle-form" id="position-data">
-                                <h2>Hola mundo</h2>
+                                <div class="important-details step">
+                                    <div class="form-group studying">
+                                            <label for="studying">¿Actualmente estás estudiando?</label>
+                                            <div class="input-container">
+                                                <input type="radio" id="studying-yes" name="estudiando" value="si">
+                                                <label for="studying-yes">Sí</label>
+                                                <input type="radio" id="studying-no" name="estudiando" value="no">
+                                                <label for="studying-no">No</label>
+                                            </div>
+                                    </div>
+                                
+                                    <div class="form-group school-schedule">
+                                            <label for="school-schedule">¿Cuál es tu horario escolar?</label>
+                                            <div class="input-container">
+                                                <input type="text" id="school-schedule" name="horario-escolar">
+                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                    </div>
+                                
+                                    <div class="form-group school-grade">
+                                            <label for="school-grade">¿Qué grado escolar estás cursando?</label>
+                                            <div class="input-container">
+                                                <input type="text" id="school-grade" name="grado-escolar">
+                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                    </div>
+                                </div>                        
+                                <div class="travel-details step hidden">
+                                    <div class="form-group upcoming-event">
+                                            <label for="upcoming-event">¿Tienes algún evento o viaje programado para los próximos meses?</label>
+                                            <div class="input-container">
+                                                <input type="radio" id="event-yes" name="evento-programado" value="si">
+                                                <label for="event-yes">Sí</label>
+                                                <input type="radio" id="event-no" name="evento-programado" value="no">
+                                                <label for="event-no">No</label>
+                                            </div>
+                                    </div>
+                                
+                                    <div class="form-group event-details">
+                                            <label for="event-details">Fecha y motivo de este evento:</label>
+                                            <div class="input-container">
+                                                <input type="text" id="event-details" name="detalles-evento">
+                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                    </div>
+                                
+                                    <div class="form-group transportation">
+                                            <label for="transportation">¿Cuál es tu medio de transporte?</label>
+                                            <div class="input-container">
+                                                <select id="transportation" name="medio-transporte" multiple>
+                                                    <option value="auto">Auto</option>
+                                                    <option value="bicicleta">Bicicleta</option>
+                                                    <option value="transporte-publico">Transporte Público</option>
+                                                    <option value="caminando">Caminando</option>
+                                                </select>
+                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                    </div>
+                                
+                                    <div class="form-group commute-time">
+                                            <label for="commute-time">¿Cuánto tiempo haces de tu casa a esta ubicación?</label>
+                                            <div class="input-container">
+                                                <input type="text" id="commute-time" name="tiempo-traslado">
+                                                <i class='bx bx-error-circle'></i>
+                                            </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="sales-experience step hidden">
+                                    <div class="form-group sales-experience">
+                                        <label for="sales-experience">¿Tienes experiencia en ventas?</label>
+                                        <div class="input-container">
+                                            <input type="radio" id="sales-experience-yes" name="experiencia-ventas" value="si">
+                                            <label for="sales-experience-yes">Sí</label>
+                                            <input type="radio" id="sales-experience-no" name="experiencia-ventas" value="no">
+                                            <label for="sales-experience-no">No</label>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group availability">
+                                        <label for="availability">Disponibilidad de horario:</label>
+                                        <div class="input-container">
+                                            <input type="text" id="availability" name="disponibilidad-horario">
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group english-level">
+                                        <label for="english-level">Nivel de inglés:</label>
+                                        <div class="input-container">
+                                            <select id="english-level" name="nivel-ingles">
+                                                <option value="basico">Básico</option>
+                                                <option value="intermedio">Intermedio</option>
+                                                <option value="avanzado">Avanzado</option>
+                                                <option value="fluido">Fluido</option>
+                                            </select>
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </form>
                     </div>               
@@ -485,8 +640,8 @@
                             <span>Guardar</span>
                         </a>
                     </div>
-
                 </div>
+
                 <div class="footer-left">
                     <div class="footer-container">
                         <div class="copy-right">
@@ -535,10 +690,10 @@
                             <i class='bx bx-check-circle'></i>
                             <span>Confirmación Requerida</span>
                         </div>
-                        <div class="button it-bg-p" data-form="position-data">
+                        <!-- <div class="button it-bg-p" data-form="position-data">
                             <i class='bx bx-check-circle'></i>
                             <span>Información de Posición</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="panel-item panel-item-footer">
@@ -551,6 +706,7 @@
 
 
     <script type="module" src="./assets/js/forms/formResultsUtils.js"></script>
+    <!-- <script src="./assets/js/forms/stepCounter.js"></script> -->
     <!-- <script src="./assets/js/forms/stepFormCounter.js"></script> -->
     <!-- <script src="./assets/js/forms/validationFunctions.js"></script> -->
 </body>

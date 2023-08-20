@@ -46,7 +46,7 @@
     place-content: center;
     border: .1rem solid #dddddd;
 }
-.step-counter{
+.step-counter-data{
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -108,7 +108,7 @@
     opacity: 0;
     z-index: -1; 
   }
-  .sections-toggle-form.active{
+  .sections-toggle-form.active-selected{
     opacity: 1;
     z-index: 1;
     transition: all .3s ease;
