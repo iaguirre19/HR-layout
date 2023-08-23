@@ -45,6 +45,8 @@
     display: grid;
     place-content: center;
     border: .1rem solid #dddddd;
+    transition: all .3s ease;
+    display: none;
 }
 .step-counter-data{
     font-size: 1.2rem;

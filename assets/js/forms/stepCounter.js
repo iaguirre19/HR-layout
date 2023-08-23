@@ -43,30 +43,71 @@
 
 
 
+// export const validateParts = (sectionContainer, stepContainer) => {
+//   const elementsChildren = sectionContainer.querySelectorAll(".step");
+//   const totalChildren = elementsChildren.length;
+
+//   console.log(totalChildren);
+
+//   let firstActiveIndex = -1;
+
+//   elementsChildren.forEach((step, index) => {
+//     const adjustedIndex = index + 1;
+
+//     if (adjustedIndex === 1 && step.classList.contains("active-part")) {
+//       stepContainer.textContent = `${adjustedIndex} de ${totalChildren}`;
+//       firstActiveIndex = adjustedIndex; 
+//     }
+
+    
+//   });
+
+//   return firstActiveIndex; 
+// };
+
 export const validateParts = (sectionContainer, stepContainer) => {
+  console.log(sectionContainer)
   const elementsChildren = sectionContainer.querySelectorAll(".step");
   const totalChildren = elementsChildren.length;
 
   console.log(totalChildren);
 
-  let firstActiveIndex = -1; // Inicializamos en -1 para verificar si se ha encontrado un elemento activo
+  let firstActiveIndex = -1;
 
   elementsChildren.forEach((step, index) => {
     const adjustedIndex = index + 1;
 
-    if (adjustedIndex === 1 && step.classList.contains("active-part")) {
+    if (step.classList.contains("active-part")) {
+      firstActiveIndex = adjustedIndex;
       stepContainer.textContent = `${adjustedIndex} de ${totalChildren}`;
-      firstActiveIndex = adjustedIndex; // Almacenamos el índice del primer elemento activo
-    }
-
-    if (adjustedIndex === 2 && step.classList.contains("active-part")) {
-      const prevButton = document.querySelector("#prevButton");
-      // Realiza acciones para el segundo elemento
     }
   });
 
-  return firstActiveIndex; // Devolvemos el índice del primer elemento activo
+  return firstActiveIndex;
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if (adjustedIndex === 2 && step.classList.contains("active-part")) {
+    //   const prevButton = document.querySelector("#prevButton");
+    //   // Realiza acciones para el segundo elemento
+    // }
 
 
