@@ -35,6 +35,30 @@
     align-items: center;
     justify-content: space-between;
 }
+.title-container-left{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.icon i {
+  color: black;
+  font-size: 3.6rem;
+}
+.icon .bx-user{
+  font-size: 3rem;
+  
+}
+.icon .bx-user-plus{
+  font-size: 3.6rem;
+}
+.icon .bx-book-content{
+  font-size: 3rem;
+}
+.uil-heart-medical,
+.uil-user-check{
+  line-height: 1;
+}
 .title-form-h2{
     font-size: var(--font-size-title);
 }

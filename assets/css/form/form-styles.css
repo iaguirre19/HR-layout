@@ -1,12 +1,10 @@
 
 .grid-form{
-    /* display: none; */
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, 1fr) max-content;
     align-items: center;
     gap: 2rem;
-    /* padding: 0 1rem; */
 }
 
 .form-group{
@@ -78,8 +76,9 @@
     grid-column: span 2;
 }
 .form-birthdate .input-container input,
-.form-age .input-container input{
-    padding: 1rem;
+.form-age .input-container input,
+.form-children .input-container input{
+    padding: .6rem;
 }
 
 /* btn next form */
@@ -94,6 +93,7 @@
 .pager-container{
     grid-column: 2/3;
     justify-self: flex-end;
+    align-items: center;
     display: flex;
     column-gap: .8rem;
     position: relative;
@@ -105,26 +105,15 @@
 
 .arrow {
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     vertical-align: middle;
 }
 #saveButton{
     grid-column: 1/2;
 }
-/* .pager-container::before{
-    content: "";
-    background-color: var(--border-input);
-    width: 2px;
-    height: 70%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-} */
+
 
 .form-btns {
-    /* right: 0; */
-    /* width: 10rem; */
     font-size: 1.4rem;
     cursor: pointer;
     display: flex;
@@ -158,21 +147,23 @@
     background-color: black;
     right: 0;
     width: 10rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: .4rem;
+    display: grid;
+    place-content: center;
     padding: .6rem 2rem;
     border-radius: .4rem;
     font-weight: bolder;
+    text-align: center;
 }
 
   #prevButton,
   #nextButton,
   #saveButton{
-    display: none;
+    display: block;
+    opacity: 0;
+    z-index: -1;
+    transition: all .2s ease
   }
 
   .hidden{

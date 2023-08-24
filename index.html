@@ -6,16 +6,17 @@
     <title>AGI Form</title>
 
     <!-- Fonts and Icons-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather&display=swap" rel="stylesheet">
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
     <link rel="stylesheet" href="./assets/css/basics.css">
+    <link rel="stylesheet" href="./assets/css/form/personal-data.css">
+
     <link rel="stylesheet" href="./assets/css/right-panel/rigth-panel.css">
     <link rel="stylesheet" href="./assets/css/left-panel/left-panel.css">
     <link rel="stylesheet" href="./assets/css/form/form-styles.css">
@@ -34,7 +35,10 @@
                     <div class="main-form-content">
                         <div class="form-header">
                             <div class="title-form-up">
-                                <h2 class="title-form-h2"></h2>
+                                <div class="title-container-left">
+                                    <div class="icon"></div>
+                                    <h2 class="title-form-h2"></h2>
+                                </div>
                                 <div class="steps-container">
                                     <p class="step-counter-data"></p>
                                 </div>
@@ -45,139 +49,144 @@
                             <!-- Personal data section -->
                             <div class="personal-data sections-toggle-form"  id="data-personal" >
                                 <!-- Group 1 -->
-                                <div class="data-personal-one step hidden grid-form">                            
-                                    <div class="form-group form-name">
-                                        <label for="first-name">Nombre:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="first-name" name="nombre" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-last-name">
-                                        <label for="last-name">Apellido Paterno:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="last-name" name="apellido_paterno" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-middle-name">
-                                        <label for="middle-name">Apellido Materno:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="middle-name" name="apellido_materno" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-gender">
-                                        <label for="gender">Género:</label>
-                                        <div class="input-container">
-                                            <select id="gender" name="genero" required>
-                                                <option value="masculino">Masculino</option>
-                                                <option value="femenino">Femenino</option>
-                                                <option value="otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-birthplace">
-                                        <label for="birthplace">Lugar de Nacimiento:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="birthplace" name="lugar_nacimiento" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-nationality">
-                                        <label for="nationality">Nacionalidad:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="nationality" name="nacionalidad" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-birthdate">
-                                        <label for="birthdate">Fecha de Nacimiento:</label>
-                                        <div class="input-container">
-                                            <input type="date" id="birthdate" name="fecha_nacimiento" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-age">
-                                        <label for="age">Edad:</label>
-                                        <div class="input-container">
-                                            <input type="number" id="age" name="edad" required>
-                                            <i class='bx bx-error-circle'></i>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="data-personal-one step hidden grid-form">
+    <div class="form-group form-name">
+        <label for="first-name">Nombre:</label>
+        <div class="input-container">
+            <input type="text" id="first-name" name="nombre" required placeholder="Ejemplo: Juan">
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+    <div class="form-group form-last-name">
+        <label for="last-name">Apellido Paterno:</label>
+        <div class="input-container">
+            <input type="text" id="last-name" name="apellido_paterno" required placeholder="Ejemplo: Pérez">
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+    <div class="form-group form-middle-name">
+        <label for="middle-name">Apellido Materno:</label>
+        <div class="input-container">
+            <input type="text" id="middle-name" name="apellido_materno" required placeholder="Ejemplo: González">
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+    <div class="form-group form-gender">
+        <label for="gender">Género:</label>
+        <div class="input-container">
+            <select id="gender" name="genero" required>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group form-birthplace">
+        <label for="birthplace">Lugar de Nacimiento:</label>
+        <div class="input-container">
+            <input type="text" id="birthplace" name="lugar_nacimiento" required placeholder="Ejemplo: Ciudad de México">
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+    <div class="form-group form-nationality">
+        <label for="nationality">Nacionalidad:</label>
+        <div class="input-container">
+            <input type="text" id="nationality" name="nacionalidad" required placeholder="Ejemplo: Mexicana">
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+    <div class="form-group form-birthdate">
+        <label for="birthdate">Fecha de Nacimiento:</label>
+        <div class="input-container">
+            <input type="date" id="birthdate" name="fecha_nacimiento" required>
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+    <div class="form-group form-age">
+        <label for="age">Edad:</label>
+        <div class="input-container">
+            <input type="number" id="age" name="edad" required placeholder="Ejemplo: 30">
+            <i class='bx bx-error-circle'></i>
+        </div>
+    </div>
+</div>
+
                                 <!-- Group 2 -->
-                                <div class="data-personal-two step hidden grid-form" >                            
-                                    <div class="form-group form-direccion">
-                                        <label for="direccion">Dirección:</label>
+                                <div class="data-personal-two step hidden grid-form">
+                                    <div class="form-group form-address">
+                                        <label for="address">Dirección:</label>
                                         <div class="input-container">
-                                            <input type="text" id="direccion" name="direccion" required>
+                                            <input type="text" id="address" name="address" required placeholder="Ejemplo: Calle Principal 123">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    <div class="form-group form-colonia">
-                                        <label for="colonia">Colonia:</label>
+                                    <div class="form-group form-suburb">
+                                        <label for="suburb">Colonia:</label>
                                         <div class="input-container">
-                                            <input type="text" id="colonia" name="colonia" required>
+                                            <input type="text" id="suburb" name="suburb" required placeholder="Ejemplo: Colonia Moderna">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    <div class="form-group form-codigo-postal">
-                                        <label for="codigo-postal">Código Postal:</label>
+                                    <div class="form-group form-zip">
+                                        <label for="zip">Código Postal:</label>
                                         <div class="input-container">
-                                            <input type="text" id="codigo-postal" name="codigo_postal" required>
+                                            <input type="text" id="zip" name="zip" required placeholder="Ejemplo: 12345">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    <div class="form-group form-vive-con">
-                                        <label for="vive-con">Vive Con:</label>
+                                    <div class="form-group form-living-with">
+                                        <label for="living-with">Vive Con:</label>
                                         <div class="input-container">
-                                            <input type="text" id="vive-con" name="vive_con" required>
+                                            <input type="text" id="living-with" name="living_with" required placeholder="Ejemplo: Familiares">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    <div class="form-group form-tenencia-vivienda">
-                                        <label for="tenencia-vivienda">Tenencia de Vivienda:</label>
+                                    <div class="form-group form-housing-tenure">
+                                        <label for="housing-tenure">Tenencia de Vivienda:</label>
                                         <div class="input-container">
-                                            <select id="tenencia-vivienda" name="tenencia_vivienda" required>
-                                                <option value="propia">Propia</option>
-                                                <option value="alquiler">Alquiler</option>
+                                            <select id="housing-tenure" name="housing_tenure" required>
+                                                <option value="" disabled selected>Selecciona una opción</option>
+                                                <option value="own">Propia</option>
+                                                <option value="rent">Alquiler</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group form-estado-civil">
-                                        <label for="estado-civil">Estado Civil:</label>
+                                    <div class="form-group form-marital-status">
+                                        <label for="marital-status">Estado Civil:</label>
                                         <div class="input-container">
-                                            <select id="estado-civil" name="estado_civil" required>
-                                                <option value="soltero">Soltero</option>
-                                                <option value="casado">Casado</option>
-                                                <option value="divorciado">Divorciado</option>
-                                                <option value="viudo">Viudo</option>
+                                            <select id="marital-status" name="marital_status" required>
+                                                <option value="" disabled selected>Selecciona una opción</option>
+                                                <option value="single">Soltero</option>
+                                                <option value="married">Casado</option>
+                                                <option value="divorced">Divorciado</option>
+                                                <option value="widowed">Viudo</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group form-hijos">
-                                        <label for="hijos">Hijos:</label>
+                                    <div class="form-group form-children">
+                                        <label for="children">Hijos:</label>
                                         <div class="input-container">
-                                            <input type="number" id="hijos" name="numero_de_hijos" min="0" required>
+                                            <input type="number" id="children" name="number_of_children" min="0" required placeholder="Ejemplo: 2">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    <div class="form-group form-telefono">
-                                        <label for="telefono">Número de Teléfono:</label>
+                                    <div class="form-group form-phone">
+                                        <label for="phone">Número de Teléfono:</label>
                                         <div class="input-container">
-                                            <input type="tel" id="telefono" name="numero_de_telefono" required>
+                                            <input type="tel" id="phone" name="phone_number" required placeholder="Ejemplo: (123) 456-7890">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    <div class="form-group form-celular">
-                                        <label for="celular">Número de Celular:</label>
+                                    <div class="form-group form-cellphone">
+                                        <label for="cellphone">Número de Celular:</label>
                                         <div class="input-container">
-                                            <input type="tel" id="celular" name="numero_de_celular" required>
+                                            <input type="tel" id="cellphone" name="cellphone_number" required placeholder="Ejemplo: (987) 654-3210">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
-                                    </div>    
+                                    </div>
                                 </div>
+
+
                                 <!-- Group 3 -->
                                 <div class="data-personal-three step hidden grid-form">                            
                                     <div class="form-group form-nivel-educacion">
@@ -706,6 +715,7 @@
 
 
     <script type="module" src="./assets/js/forms/formResultsUtils.js"></script>
+    <script type="module" src="./assets/js/forms/render-buttons/render-buttons.js"></script>
     <!-- <script src="./assets/js/forms/stepCounter.js"></script> -->
     <!-- <script src="./assets/js/forms/stepFormCounter.js"></script> -->
     <!-- <script src="./assets/js/forms/validationFunctions.js"></script> -->
