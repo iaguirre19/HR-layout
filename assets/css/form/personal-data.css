@@ -1,3 +1,6 @@
+.data-personal-one .form-group:nth-child(8){
+    grid-column: span 2;
+}
 .data-personal-two .form-group:nth-child(1){
     grid-column: 1/5;
 }
@@ -14,3 +17,41 @@
 .data-personal-two .form-group:nth-child(9){
     grid-column: 3/5;
 }
+
+/* Part three personal data */
+.data-personal-three .form-group:nth-child(1){
+    grid-column: span 2;
+}
+.data-personal-three .form-group:nth-child(2){
+    grid-column: span 2;
+}
+.data-personal-three .form-group:nth-child(3){
+    grid-column: span 2;
+}
+.data-personal-three .form-group:nth-child(4){
+    grid-column: span 2;
+}
+.data-personal-three .form-group:nth-child(5){
+    grid-column: span 2;
+}
+.data-personal-three .form-group:nth-child(6){
+    grid-column: span 2;
+}
+ .input-container.number-container input[type="number"]::-webkit-inner-spin-button,
+    .input-container.number-container input[type="number"]::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+
+    .input-container.number-container input[type="number"]::-moz-number-spin {
+        appearance: none;
+        margin: 0;
+    }
+
+
+    .input-container.number-container input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }

@@ -36,7 +36,7 @@
 
 .input-container input:focus {
   outline: none;
-  border:.1rem solid #32a0ff;
+  border:.2rem solid #32a0ff;
 }
 .bx-error-circle{
     display: none;

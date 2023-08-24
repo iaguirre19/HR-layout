@@ -12,9 +12,6 @@ export const displayHeaderInfo = (formSelected, headerData) => {
 };
 
 const printSectionInfo = (title, description, icon) => {
-  console.log(icon)
-  
-  
   const iconContainer = document.querySelector(".icon");
   const titleContainer = document.querySelector(".title-form-h2");
   const titleDescription = document.querySelector(".title-form-description");
