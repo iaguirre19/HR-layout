@@ -4,7 +4,7 @@
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(4, 1fr) max-content;
     align-items: center;
-    gap: 2rem;
+    gap: 2.4rem;
 }
 
 .form-group{
@@ -24,7 +24,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: .2rem solid var(--border-input);
+    border: .1rem solid var(--border-input);
     border-radius: .4rem;
     padding:.2rem 2.8rem .2rem .8rem;
     transition: all 0.3s ease;
@@ -38,15 +38,7 @@
   outline: none;
   border:.2rem solid #32a0ff;
 }
-.bx-error-circle{
-    display: none;
-    position: absolute;
-    right: .6rem;
-    top: 50%;
-    transform: translateY(-50%); 
-    z-index: 2;
-    color: red;
-}
+
 .form-group label{
     font-size: var(--font-size-label);
     color: rgb(77, 77, 77);
@@ -132,7 +124,7 @@
 .pager:hover, 
 .pager:hover i{
     transition: all .3s ease-in-out;
-    color: #32a0ff;
+    color: #14297a;
 }
 
 .pager:hover .bx-left-arrow-alt{
@@ -141,7 +133,8 @@
 .pager:hover .bx-right-arrow-alt{
     transform: translateX(.4rem)
 }
-.save{
+.save,
+.print-button{
     border: solid .1rem black;
     color: white;
     background-color: black;
@@ -169,3 +162,4 @@
   .hidden{
     display: none;
   }
+

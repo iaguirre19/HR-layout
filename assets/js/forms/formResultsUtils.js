@@ -1,6 +1,7 @@
 import { displayHeaderInfo } from "./headerLeftDisplay.js";
-import { updateGlobalData, getGlobalData, buttonsShow, stepCounter } from "./global/global.js";
-
+import { updateGlobalData, getGlobalData, buttonsShow, stepCounter, clearComplete } from "./global/global.js";
+import { validateInputs } from "./validate-form/validationFunctions.js";
+validateInputs
 
 const toggleBtns = document.querySelectorAll(".button[data-form]");
 const dataArray = [
@@ -57,12 +58,15 @@ toggleBtns.forEach((btn) => {
 
 function toogleEvent() {
   const toggleId = this.getAttribute("data-form");
+  const containerToggle = this;
 
   const formData = showFormContainerMatch(toggleId, dataArray);
   const divContainer = formData;
   const containerStep = stepCounter(divContainer);
-  updateGlobalData(divContainer, containerStep);
+  updateGlobalData(divContainer, containerStep, containerToggle);
   buttonsShow(containerStep, nextButton);
+  validateInputs(divContainer);
+  clearComplete(getGlobalData); 
 }
 
 const showFormContainerMatch = (idToggle, dataArray) => {

@@ -1,4 +1,5 @@
-.left-panel{
+.right-version{
+    position: relative;
     display: grid;
     grid-template-rows: auto 1fr auto auto;
     padding: 1rem 2rem;
@@ -21,10 +22,10 @@
     height: 4rem;
   }
   .logo-left-panel img{
-    grid-column: 2/3;
     width: 100%;
     height: 100%;
     object-fit: contain;
+    grid-column: 2/3;
 }
 .form-header{
     display: flex;
@@ -64,16 +65,17 @@
     font-size: var(--font-size-title);
 }
 .steps-container{
-    background-color: #f6f6f6;
-    padding: .4rem 1rem;
+    background-color: #000000;
+    padding: .4rem 1.4rem;
     border-radius: 1.6rem;
     display: grid;
     place-content: center;
-    border: .1rem solid #dddddd;
+    border: .1rem solid #000000;
     transition: all .3s ease;
     display: none;
 }
 .step-counter-data{
+    color: white;
     font-size: 1.2rem;
     font-weight: 600;
 }

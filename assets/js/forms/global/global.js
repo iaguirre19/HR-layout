@@ -3,34 +3,27 @@
 let globalData = {
   divContainer: null,
   containerStep: null,
+  containerToggle: null,
+  formData: {},
 };
 
-export function updateGlobalData(divContainer, containerStep) {
+export function updateGlobalData(divContainer, containerStep, containerToggle) {
   globalData.divContainer = divContainer;
   globalData.containerStep = containerStep;
+  globalData.containerToggle = containerToggle;
 }
 
 export function getGlobalData() {
   return globalData;
 }
 
-// export const buttonsShow = (partNumber) => {
-//   const nextButton = document.querySelector("#nextButton");
-//   const prevButton = document.getElementById("prevButton");
-//   const saveButton = document.getElementById("saveButton");
+export function storeFormData() {
+  const formInputs = document.querySelectorAll(".form-body input");
 
-//   if (partNumber === "singleStep") {
-//     nextButton.style.display = "none";
-//     saveButton.style.display = "block";
-//   } else if (partNumber === "firstStep") {
-//     saveButton.style.display = "none";
-//     nextButton.style.display = "block";
-//   } else if (partNumber === "lastStep") {
-//     nextButton.style.display = "none";
-//     prevButton.style.display = "block";
-//     saveButton.style.display = "block";
-//   }
-// };
+  formInputs.forEach((input) => {
+    globalData.formData[input.name] = input.value;
+  });
+}
 
 
 export const buttonsShow = (partNumber) => {
@@ -56,18 +49,6 @@ export const buttonsShow = (partNumber) => {
   saveButton.style.opacity = styles.save.opacity;
   saveButton.style.zIndex = styles.save.zIndex;
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -106,3 +87,12 @@ export const stepCounter = (sectionContainer) => {
 
   return theCurrentStepIs;
 };
+
+
+//  cleans all classes complete
+export function clearComplete(getGlobalData) {
+  const divContainer = getGlobalData().divContainer;
+  const completedElements = divContainer.querySelectorAll(".complete");
+
+  completedElements.forEach((element) => element.classList.remove("complete"));
+}

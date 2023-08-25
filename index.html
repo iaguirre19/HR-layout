@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGI Form</title>
+    <title>HR-Form</title>
 
     <!-- Fonts and Icons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -15,21 +15,62 @@
 
 
     <link rel="stylesheet" href="./assets/css/basics.css">
+    <link rel="stylesheet" href="./assets/css/main-page-modal/main-modale.css">
     <link rel="stylesheet" href="./assets/css/form/personal-data.css">
     <link rel="stylesheet" href="./assets/css/form/additional-data.css">
     <link rel="stylesheet" href="./assets/css/form/contact-info.css">
     <link rel="stylesheet" href="./assets/css/form/health-info.css">
     <link rel="stylesheet" href="./assets/css/form/confirmation-required.css">
+    <link rel="stylesheet" href="./assets/css/form/validation-form/validation-form.css">
 
-    <link rel="stylesheet" href="./assets/css/right-panel/rigth-panel.css">
-    <link rel="stylesheet" href="./assets/css/left-panel/left-panel.css">
+    <link rel="stylesheet" href="./assets/css/left-version/left-version.css"`>
+    <link rel="stylesheet" href="./assets/css/right-version/right-version.css">
     <link rel="stylesheet" href="./assets/css/form/form-styles.css">
 
 </head>
 <body>
     <main class="main-content">
         <section class="content-section">
-            <div class="left-panel">
+            <div class=" right-version">
+                <div class="main-page-modal">
+                    <div class="main-page-container">
+                        <div class="main-page-logo">
+                        </div>
+                        <div class="success-message">
+                            <p>¡El formulario se ha completado exitosamente!</p>
+                        </div>
+                        <div class="terms-and-conditions">
+                            <div class="terms-and-contains-container">
+                                <h2>Términos y Condiciones</h2>
+                                <p class="terms-inst">Al completar y enviar este formulario en línea, usted acepta los siguientes términos y condiciones:</p>
+                                <ol>
+                                    <li><strong>Información Personal:</strong> La información proporcionada en este formulario, incluyendo su nombre, dirección, fecha de nacimiento, género y estado civil, será recopilada con el propósito de gestionar y mantener registros precisos de nuestros clientes.</li>
+                                    <li><strong>Información Médica:</strong> Si ha proporcionado información médica, como alergias, condiciones médicas preexistentes o medicamentos que toma, entiende que esta información será utilizada exclusivamente para garantizar su seguridad y bienestar en el contexto de nuestros servicios.</li>
+                                    <li><strong>Información de Contacto:</strong> Los números de teléfono, correos electrónicos y otros detalles de contacto que proporcione serán utilizados para comunicarnos con usted en relación con los servicios, confirmar citas y enviar recordatorios importantes.</li>
+                                    <li><strong>Consentimiento de Uso:</strong> Al enviar este formulario, otorga su consentimiento expreso a "AGI Business Group Tijuana" para recopilar, almacenar y utilizar la información proporcionada con fines administrativos, operativos y de mejora de nuestros servicios.</li>
+                                    <li><strong>Confidencialidad y Seguridad:</strong> Nos comprometemos a mantener la confidencialidad y seguridad de su información. No compartiremos su información con terceros sin su consentimiento, a menos que sea requerido por la ley.</li>
+                                    <li><strong>Derechos de Acceso y Modificación:</strong> Usted tiene el derecho de acceder, modificar y solicitar la eliminación de su información personal en cualquier momento. Puede ponerse en contacto con nosotros para ejercer estos derechos.</li>
+                                    <li><strong>Uso de la Información:</strong> La información recopilada podrá ser utilizada para mejorar nuestros servicios, realizar análisis estadísticos y mantener una comunicación efectiva con usted.</li>
+                                </ol>
+                            </div>
+                            <div class="term-acceptance">
+                                    <div class="term-acceptance-text">
+                                        <p>Al marcar la casilla de aceptación al final de este formulario, confirma que ha leído, comprendido y aceptado los términos y condiciones aquí establecidos.</p>
+                                        <p>Le recordamos que si tiene alguna pregunta sobre cómo utilizamos su información o desea ejercer sus derechos de privacidad, puede ponerse en contacto con nuestro equipo de atención al cliente.</p>
+                                        <p>Agradecemos su confianza en "AGI Business Group Tijuana".</p>
+                                    </div>
+                                    <label class="check-container">
+                                        <input type="checkbox" id="accept-terms">
+                                        <span>Acepto los términos y condiciones antes mencionados.</span>
+                                    </label>
+                                </div>
+                        </div>
+
+                        <div class="main-page-btn">
+                            <button class="print-button">Imprimir</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="panel-item logo-form">
                     <div class="logo-left-panel">
                         <img src="https://agibusiness.com/wp-content/uploads/2023/04/agi_logo_azul.png" alt="">
@@ -64,14 +105,14 @@
                                     <div class="form-group form-last-name">
                                         <label for="last-name">Apellido Paterno:</label>
                                         <div class="input-container">
-                                            <input type="text" id="last-name" name="apellido_paterno" required placeholder="Ejemplo: Pérez">
+                                            <input type="text" id="last-name" name="last-name" required placeholder="Ejemplo: Pérez">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
                                     <div class="form-group form-middle-name">
                                         <label for="middle-name">Apellido Materno:</label>
                                         <div class="input-container">
-                                            <input type="text" id="middle-name" name="apellido_materno"  placeholder="Ejemplo: González">
+                                            <input type="text" id="middle-name" name="apellido_materno"  placeholder="Ejemplo: González" required>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
@@ -109,12 +150,11 @@
                                     <div class="form-group form-age">
                                         <label for="age">Edad:</label>
                                         <div class="input-container number-container">
-                                            <input type="number" id="age" name="age" required placeholder="Ejemplo: 30">
+                                            <input type="text" id="age" name="age" required placeholder="Ejemplo: 30">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- Group 2 -->
                                 <div class="data-personal-two step hidden grid-form">
                                     <div class="form-group form-address">
@@ -189,8 +229,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <!-- Group 3 -->
                                 <div class="data-personal-three step hidden grid-form">
                                     <div class="form-group form-education-level">
@@ -394,12 +432,10 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                             <!-- Health section -->
                             <div class="health-info sections-toggle-form" id="health-information">
-                                <div class="health-info-details step hidden grid-form-health">
+                                <div class="health-info-details step hidden grid-form grid-form-health">
                                     <div class="form-group blood-type">
                                         <label for="blood-type">Tipo de Sangre:</label>
                                         <div class="input-container">
@@ -416,6 +452,7 @@
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group allergies">
                                         <label for="allergies">Alergias que padece:</label>
                                         <div class="input-container">
@@ -423,64 +460,66 @@
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    
+                                
                                     <div class="form-group diabetes">
                                         <label for="diabetes">¿Tiene diabetes?</label>
                                         <div class="input-container">
-                                            <select id="diabetes" name="diabetes">
+                                            <select id="diabetes" name="diabetes" required>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-
+                                
                                     <div class="form-group hypertension">
                                         <label for="hypertension">¿Tiene hipertensión?</label>
                                         <div class="input-container">
-                                            <select id="hypertension" name="hipertension">
+                                            <select id="hypertension" name="hipertension" required>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-
+                                
                                     <div class="form-group vision">
                                         <label for="vision">¿Tiene miopía o astigmatismo?</label>
                                         <div class="input-container">
-                                            <select id="vision" name="vision">
+                                            <select id="vision" name="vision" required>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-
+                                
                                     <div class="form-group motor-difficulty">
                                         <label for="motor-difficulty">¿Tiene dificultad motriz?</label>
                                         <div class="input-container">
-                                            <select id="motor-difficulty" name="dificultad-motriz">
+                                            <select id="motor-difficulty" name="dificultad-motriz" required>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    
+                                
                                     <div class="form-group sports">
                                         <label for="sports">¿Practica algún deporte?</label>
                                         <div class="input-container">
-                                            <input type="text" id="sports" name="deporte" placeholder="Ejemplo: Fútbol, Natación">
+                                            <input type="text" id="sports" name="deporte" placeholder="Ejemplo: Fútbol, Natación" required>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="health-assessment step hidden grid-form-health">
+
+                                <div class="health-assessment step hidden grid-form grid-form-health">
                                     <div class="form-group health-status">
                                         <label for="health-status">¿Cómo consideras tu salud?</label>
                                         <div class="input-container">
                                             <select id="health-status" name="estado-salud" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="muy-buena">Muy buena</option>
                                                 <option value="buena">Buena</option>
                                                 <option value="regular">Regular</option>
@@ -489,48 +528,52 @@
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group chronic-illness">
                                         <label for="chronic-illness">¿Has padecido alguna enfermedad crónica?</label>
                                         <div class="input-container">
-                                            <input type="text" id="chronic-illness" name="enfermedad-cronica" placeholder="Especificar enfermedad crónica si aplica">
+                                            <input type="text" id="chronic-illness" name="enfermedad-cronica" required placeholder="Especificar enfermedad crónica si aplica">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group">
                                         <label for="covid-recent">¿Has padecido COVID-19 en los últimos 6 meses?</label>
                                         <div class="input-container">
-                                            <select id="covid-recent" name="covid-reciente">
+                                            <select id="covid-recent" name="covid-reciente" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-
+                                
                                     <div class="form-group">
                                         <label for="covid-vaccine">¿Estás vacunado contra el COVID-19?</label>
                                         <div class="input-container">
-                                            <select id="covid-vaccine" name="vacuna-covid">
+                                            <select id="covid-vaccine" name="vacuna-covid" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
-                                    
                                 </div>
+
                                 <div class="health-assessment-2 step hidden grid-form">
                                     <div class="form-group current-medication">
                                         <label for="current-medication">¿Estás tomando algún medicamento actualmente?</label>
                                         <div class="input-container">
-                                            <input type="text" id="current-medication" name="medicamento-actual" placeholder="Especificar medicamento si aplica">
+                                            <input type="text" id="current-medication" name="medicamento-actual" required placeholder="Especificar medicamento si aplica">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
                                     <div class="form-group medical-appointment">
                                         <label for="medical-appointment">¿Tienes alguna cita médica programada?</label>
                                         <div class="input-container">
-                                            <input type="text" id="medical-appointment" name="cita-medica" placeholder="Especificar cita médica si aplica">
+                                            <input type="text" id="medical-appointment" name="cita-medica" required placeholder="Especificar cita médica si aplica">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
@@ -542,49 +585,58 @@
                                     <div class="form-group studying">
                                         <label for="studying">¿Actualmente estás estudiando?</label>
                                         <div class="input-container">
-                                            <select id="studying-select" name="estudiando">
+                                            <select id="studying-select" name="estudiando" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group school-schedule">
                                         <label for="school-schedule">¿Cuál es tu horario escolar?</label>
                                         <div class="input-container">
-                                            <input type="text" id="school-schedule" name="horario-escolar" placeholder="Especificar horario escolar si aplica">
+                                            <input type="text" id="school-schedule" name="horario-escolar" placeholder="Especificar horario escolar si aplica" required>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group school-grade">
                                         <label for="school-grade">¿Qué grado escolar estás cursando?</label>
                                         <div class="input-container">
-                                            <input type="text" id="school-grade" name="grado-escolar" placeholder="Especificar grado escolar si aplica">
+                                            <input type="text" id="school-grade" name="grado-escolar" placeholder="Especificar grado escolar si aplica" required>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="travel-details step hidden grid-form">
                                     <div class="form-group upcoming-event">
                                         <label for="upcoming-event">¿Tienes algún evento o viaje programado para los próximos meses?</label>
                                         <div class="input-container">
-                                            <select id="upcoming-event" name="evento-programado">
+                                            <select id="upcoming-event" name="evento-programado" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group event-details">
-                                        <label for="event-details">Fecha y motivo de este evento:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="event-details" name="detalles-evento" placeholder="Especificar detalles del evento si aplica">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
+                                    <div class="form-group event-details">
+                                        <label for="event-details">Fecha y motivo de este evento:</label>
+                                        <div class="input-container">
+                                            <input type="text" id="event-details" name="detalles-evento" placeholder="Especificar detalles del evento si aplica" required>
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                
                                     <div class="form-group transportation">
                                         <label for="transportation">¿Cuál es tu medio de transporte?</label>
                                         <div class="input-container">
-                                            <select id="transportation" name="medio-transporte" >
+                                            <select id="transportation" name="medio-transporte" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="auto">Auto</option>
                                                 <option value="bicicleta">Bicicleta</option>
                                                 <option value="transporte-publico">Transporte Público</option>
@@ -593,35 +645,42 @@
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group commute-time">
                                         <label for="commute-time">¿Cuánto tiempo haces de tu casa a esta ubicación?</label>
                                         <div class="input-container">
-                                            <input type="text" id="commute-time" name="tiempo-traslado" placeholder="Especificar tiempo de traslado si aplica">
+                                            <input type="text" id="commute-time" name="tiempo-traslado" placeholder="Especificar tiempo de traslado si aplica" required>
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="sales-experience step hidden grid-form">
                                     <div class="form-group sales-experience">
                                         <label for="sales-experience">¿Tienes experiencia en ventas?</label>
                                         <div class="input-container">
-                                            <select id="sales-experience" name="experiencia-ventas">
+                                            <select id="sales-experience" name="experiencia-ventas" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="si">Sí</option>
                                                 <option value="no">No</option>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group availability">
-                                        <label for="availability">Disponibilidad de horario:</label>
-                                        <div class="input-container">
-                                            <input type="text" id="availability" name="disponibilidad-horario" placeholder="Especificar disponibilidad de horario si aplica">
                                             <i class='bx bx-error-circle'></i>
                                         </div>
                                     </div>
+                                
+                                    <div class="form-group availability">
+                                        <label for="availability">Disponibilidad de horario:</label>
+                                        <div class="input-container">
+                                            <input type="text" id="availability" name="disponibilidad-horario" placeholder="Especificar disponibilidad de horario si aplica" required>
+                                            <i class='bx bx-error-circle'></i>
+                                        </div>
+                                    </div>
+                                
                                     <div class="form-group english-level">
                                         <label for="english-level">Nivel de inglés:</label>
                                         <div class="input-container">
-                                            <select id="english-level" name="nivel-ingles">
+                                            <select id="english-level" name="nivel-ingles" required>
+                                                <option value="" disabled selected>Seleccione uno</option>
                                                 <option value="basico">Básico</option>
                                                 <option value="intermedio">Intermedio</option>
                                                 <option value="avanzado">Avanzado</option>
@@ -652,7 +711,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="footer-left">
                     <div class="footer-container">
                         <div class="copy-right">
@@ -666,8 +724,9 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
-            <div class="right-panel">
+            <div class="left-version">
                 <div class="panel-item panel-item-icon">
                     <div class="icon-container">
                         <i class='bx bx-check-shield'></i>
@@ -685,30 +744,25 @@
                             <i class='bx bx-check-circle'></i>
                             <span>Datos Personales</span>
                         </div>
-                        <div class="button it-bg-p" data-form="additional-data">
+                        <div class="button it-bg-p hidden-toggle" data-form="additional-data">
                             <i class='bx bx-check-circle'></i>
                             <span>Datos Adicionales</span>
                         </div>
-                        <div class="button it-bg-p" data-form="contact-information">
+                        <div class="button it-bg-p hidden-toggle" data-form="contact-information">
                             <i class='bx bx-check-circle'></i>
                             <span>Información de Contacto</span>
                         </div>
-                        <div class="button it-bg-p" data-form="health-information">
+                        <div class="button it-bg-p hidden-toggle" data-form="health-information">
                             <i class='bx bx-check-circle'></i>
                             <span>Información de Salud</span>
                         </div>
-                        <div class="button it-bg-p" data-form="confirmation-required">
+                        <div class="button it-bg-p hidden-toggle" data-form="confirmation-required" id="lastToggle">
                             <i class='bx bx-check-circle'></i>
                             <span>Confirmación Requerida</span>
                         </div>
-                        <!-- <div class="button it-bg-p" data-form="position-data">
-                            <i class='bx bx-check-circle'></i>
-                            <span>Información de Posición</span>
-                        </div> -->
                     </div>
                 </div>
                 <div class="panel-item panel-item-footer">
-                    <!-- Contenido del pie de página del panel -->
                 </div>
             </div>
         </section>
@@ -716,10 +770,8 @@
 
 
 
+    <script src="./assets/js/forms/clean-inputs/cleanInputs.js"></script>
     <script type="module" src="./assets/js/forms/formResultsUtils.js"></script>
     <script type="module" src="./assets/js/forms/render-buttons/render-buttons.js"></script>
-    <!-- <script src="./assets/js/forms/stepCounter.js"></script> -->
-    <!-- <script src="./assets/js/forms/stepFormCounter.js"></script> -->
-    <!-- <script src="./assets/js/forms/validationFunctions.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,36 @@
+.bx-error-circle, .bx-check{
+    display: none;
+    position: absolute;
+    right: .8rem;
+    top: 50%;
+    transform: translateY(-50%); 
+    z-index: 10;
+    color: var(--error-color);
+    font-size: 1.8rem;
+}
+.input-container{
+    position: relative;
+}
+.bx-check{
+    font-size: 2rem;
+}
+.input-container.error input {
+    border-color: var(--error-color);
+}
+
+.input-container.check i{
+    color: var(--check-color);
+}
+
+.input-container.error .bx-error-circle {
+    display: block;
+}
+.error-message {
+  display:none;
+  position: absolute;
+  bottom: -2rem;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  transition: all .3s ease-in-out;
+}
