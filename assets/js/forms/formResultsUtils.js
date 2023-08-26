@@ -1,9 +1,10 @@
 import { displayHeaderInfo } from "./headerLeftDisplay.js";
-import { updateGlobalData, getGlobalData, buttonsShow, stepCounter, clearComplete } from "./global/global.js";
+import { updateGlobalData, getGlobalData, buttonsShow, stepCounter, clearComplete, hideModal } from "./global/global.js";
 import { validateInputs } from "./validate-form/validationFunctions.js";
 validateInputs
 
 const toggleBtns = document.querySelectorAll(".button[data-form]");
+const modalElement = document.querySelector(".main-page-modal");
 const dataArray = [
   {
     "data-personal": {
@@ -66,7 +67,8 @@ function toogleEvent() {
   updateGlobalData(divContainer, containerStep, containerToggle);
   buttonsShow(containerStep, nextButton);
   validateInputs(divContainer);
-  clearComplete(getGlobalData); 
+  clearComplete(getGlobalData);
+  hideModal(modalElement); 
 }
 
 const showFormContainerMatch = (idToggle, dataArray) => {

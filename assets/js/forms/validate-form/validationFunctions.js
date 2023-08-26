@@ -6,6 +6,32 @@ export function validateInputs(content) {
     ".input-container input[required]"
   );
 
+  const clickOnInput = (inputs) => {
+    inputs.forEach((input) => {
+      input.addEventListener("focus", function () {
+        if (this.type === "tel") {
+          this.addEventListener("input", function () {
+            const cleanedValue = this.value.replace(/\D/g, "");
+
+            if (cleanedValue.length <= 10) {
+              const formattedValue = cleanedValue.replace(
+                /^(\d{0,3})(\d{0,3})(\d{0,4})$/,
+                "($1) $2-$3"
+              );
+              this.value = formattedValue;
+            } else {
+              this.value = cleanedValue.slice(0, 10);
+            }
+          });
+        }
+      });
+    });
+  };
+
+
+
+  clickOnInput(inputs)
+  
   inputs.forEach((input) => {
     const errorIcon = input.nextElementSibling;
     const inputContainer = input.parentElement;
@@ -21,27 +47,27 @@ export function validateInputs(content) {
       inputContainer.appendChild(errorMessage);
     }
 
+
+
     input.addEventListener("blur", function () {
-      if (this.value === "") {
-        errorIcon.className = "bx bx-error-circle";
-        errorIcon.style.display = "block";
-        inputContainer.classList.add("error");
-        inputContainer.classList.remove("check");
-        grandparentElement.classList.add("invalid");
-        grandparentElement.classList.remove("valid");
-        errorMessage.style.display = "block"; 
-      } else {
-        errorIcon.className = "bx bx-check";
-        errorIcon.style.display = "block";
-        inputContainer.classList.remove("error");
-        inputContainer.classList.add("check");
-        grandparentElement.classList.add("valid")
-        grandparentElement.classList.remove("invalid");
-        errorMessage.style.display = "none";
-      }
+      const inputValue = this.value;
+      const isEmpty = inputValue === "";
+      const validClass = isEmpty ? "invalid" : "valid";
+      const invalidClass = isEmpty ? "valid" : "invalid";
+
+      errorIcon.className = isEmpty ? "bx bx-error-circle" : "bx bx-check";
+      inputContainer.classList.add(isEmpty ? "error" : "check");
+      inputContainer.classList.remove(isEmpty ? "check" : "error");
+      grandparentElement.classList.add(validClass);
+      grandparentElement.classList.remove(invalidClass);
+      errorMessage.style.display = isEmpty ? "block" : "none";
+
+      errorIcon.style.display = "block";
     });
+
+    
   });
-}
+};
 
 
 

@@ -96,3 +96,12 @@ export function clearComplete(getGlobalData) {
 
   completedElements.forEach((element) => element.classList.remove("complete"));
 }
+
+export function hideModal(element) {
+  if (element.style.opacity !== "0" || element.style.zIndex !== "-1") {
+    element.style.opacity = "0";
+    element.style.zIndex = "-1";
+  }
+}
+
+

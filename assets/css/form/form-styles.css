@@ -30,9 +30,9 @@
     transition: all 0.3s ease;
 }
 
-.input-container select{
+/* .input-container select{
     background-color: transparent;
-}
+} */
 
 .input-container input:focus {
   outline: none;
@@ -163,3 +163,12 @@
     display: none;
   }
 
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('../../img/logos/arrow.svg') no-repeat right center;
+  padding-right: 20px;
+  background-color: #ffff;
+  border: 1px solid var(--border-input);
+}
